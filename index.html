@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube Proibido 🔥 | Acesso VIP</title>
+    <title>Clube VIP | Finalização</title>
     <style>
         :root {
             --vermelho-sangue: #ff0033;
@@ -38,7 +38,7 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 40px auto;
             padding: 30px;
             background: rgba(20, 20, 20, 0.9);
@@ -47,7 +47,6 @@
             box-shadow: var(--sombra-sensual);
         }
         
-        /* Barra de Progresso */
         .progress-container {
             margin: 40px 0;
             background: rgba(255, 0, 51, 0.1);
@@ -62,30 +61,8 @@
             background: var(--degrade-quente);
             width: 0%;
             transition: width 0.5s ease;
-            position: relative;
-            overflow: hidden;
         }
         
-        .progress-bar::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent);
-            animation: progressShine 2s infinite;
-        }
-        
-        @keyframes progressShine {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        /* Botões de Compartilhamento */
         .share-buttons {
             display: flex;
             justify-content: center;
@@ -117,119 +94,73 @@
             color: white;
         }
         
-        /* Conteúdo Bloqueado/Prévia */
-        .content-preview {
-            margin: 40px 0;
-            background: #111;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .blurred-image {
-            width: 100%;
-            border-radius: 8px;
-            filter: blur(15px);
-            transition: filter 0.5s;
-        }
-        
-        /* Página de Pagamento */
-        .payment-options {
-            display: grid;
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .plan-card {
-            background: rgba(255, 0, 51, 0.1);
-            border: 1px solid var(--vermelho-sangue);
-            border-radius: 10px;
-            padding: 25px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .plan-card:hover {
-            background: rgba(255, 0, 51, 0.2);
-            transform: translateY(-5px);
-        }
-        
-        .plan-card.selected {
-            background: rgba(255, 0, 51, 0.3);
-            border: 2px solid var(--dourado);
-            box-shadow: 0 5px 20px rgba(255, 0, 51, 0.4);
-        }
-        
-        .plan-name {
-            color: var(--dourado);
-            font-size: 1.5em;
-            margin: 0 0 10px;
-        }
-        
-        .plan-price {
-            font-size: 2em;
-            margin: 10px 0;
-        }
-        
-        .btn-payment {
+        .btn {
             display: block;
             background: var(--degrade-quente);
             color: white;
-            border: none;
             padding: 18px;
-            margin: 30px auto 0;
+            margin: 30px auto;
+            border: none;
             border-radius: 50px;
             font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
-            width: 100%;
+            text-align: center;
+            width: 80%;
             max-width: 400px;
             transition: all 0.3s;
             box-shadow: 0 5px 15px rgba(255, 0, 51, 0.5);
         }
         
-        .btn-payment:hover {
+        .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(255, 0, 51, 0.7);
-        }
-        
-        .btn-payment:disabled {
-            background: #555;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
         }
         
         .hidden {
             display: none;
         }
         
-        .loading {
+        .pix-container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px dashed var(--dourado);
+            margin: 30px 0;
             text-align: center;
-            margin: 50px 0;
         }
         
-        .loading-spinner {
-            border: 5px solid rgba(255, 0, 51, 0.3);
-            border-radius: 50%;
-            border-top: 5px solid var(--vermelho-sangue);
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
+        .pix-code {
+            background: white;
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 20px 0;
+        }
+        
+        .pix-qrcode {
+            width: 200px;
+            height: 200px;
             margin: 0 auto;
+            background: #eee;
+            padding: 10px;
+            border-radius: 10px;
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .timer {
+            font-size: 1.5em;
+            color: var(--dourado);
+            margin: 20px 0;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>CLUBE PROIBIDO</h1>
-        <p>Desbloqueie seus desejos mais profundos</p>
+        <h1>LIBERE SEU ACESSO VIP</h1>
+        <p>Complete os passos para desbloquear conteúdo exclusivo</p>
     </header>
     
     <div class="container">
@@ -250,128 +181,98 @@
                 </button>
             </div>
             
-            <div id="lockedContent" class="content-preview">
+            <div id="lockedContent" style="text-align: center; margin: 40px 0;">
                 <h3>🔒 CONTEÚDO BLOQUEADO</h3>
                 <p>Complete o compartilhamento para visualizar a prévia exclusiva</p>
             </div>
             
-            <div id="previewContent" class="content-preview hidden">
-                <h3 style="color: var(--dourado);">PRÉVIA EXCLUSIVA</h3>
-                <img src="clideo_editor_e2586dc9ebbb4a7c857f3f7791065a55.gif" 
-                     class="blurred-image" id="previewImage">
-                <p style="margin-top: 15px; font-style: italic;">
-                    "Isso é apenas uma amostra do que te espera como membro VIP..."
-                </p>
+            <div id="previewContent" class="hidden">
+                <h3 style="color: var(--dourado); text-align: center;">PRÉVIA EXCLUSIVA</h3>
+                <div style="background: #111; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <img src="clideo_editor_e2586dc9ebbb4a7c857f3f7791065a55.gif" 
+                         style="width: 100%; border-radius: 8px; filter: blur(5px);">
+                    <p style="text-align: center; margin-top: 15px; font-style: italic;">
+                        "Isso é apenas uma amostra do que te espera como membro VIP..."
+                    </p>
+                </div>
                 
-                <button class="btn-payment" onclick="showPayment()">
+                <button class="btn" onclick="showPayment()">
                     <i class="fas fa-gem"></i> QUERO ACESSO COMPLETO AGORA
                 </button>
             </div>
         </div>
         
-        <!-- Passo 2: Pagamento -->
+        <!-- Passo 2: Pagamento PIX -->
         <div id="paymentStep" class="hidden">
-            <h2 style="text-align: center; color: var(--dourado);">ESCOLHA SEU PLANO VIP</h2>
+            <h2 style="text-align: center; color: var(--dourado);">PAGAMENTO VIA PIX</h2>
             
-            <div class="payment-options">
-                <div class="plan-card" onclick="selectPlan('mensal')">
-                    <h3 class="plan-name">PLANO MENSAL</h3>
-                    <p>Acesso completo por 30 dias</p>
-                    <p class="plan-price">R$ 15,00</p>
-                    <ul style="text-align: left; padding-left: 20px;">
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Conteúto premium diário</li>
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Acesso a vídeos exclusivos</li>
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Suporte prioritário</li>
-                    </ul>
+            <div class="pix-container">
+                <p>Escaneie o QR Code ou copie o código abaixo:</p>
+                
+                <!-- QR Code Placeholder (substitua por um gerador real em produção) -->
+                <div class="pix-qrcode" style="display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-qrcode" style="font-size: 100px; color: #333;"></i>
                 </div>
                 
-                <div class="plan-card" onclick="selectPlan('trimestral')">
-                    <h3 class="plan-name">PLANO TRIMESTRAL</h3>
-                    <p>Economize 20% - 90 dias de acesso</p>
-                    <p class="plan-price">R$ 39,90</p>
-                    <ul style="text-align: left; padding-left: 20px;">
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Todos os benefícios mensais</li>
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Conteúdo bônus exclusivo</li>
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Lista de prioridade para novidades</li>
-                    </ul>
+                <p class="pix-code" id="pixCode">
+                    00020126580014br.gov.bcb.pix0136d147662a-3a05-4d58-8174-ca108dbcca0b27600016BR.COM.PAGSEGURO0136000EA04E-12A8-4BD1-90A8-A8C8EE8FC011520489995303986540515.005802BR5923JAILINE SANTOS DE JESUS6004CATU62290525PAGS0000015002504062101066304B7B3
+                </p>
+                
+                <button class="btn" onclick="copyPixCode()">
+                    <i class="fas fa-copy"></i> COPIAR CÓDIGO PIX
+                </button>
+                
+                <div class="timer" id="timer">
+                    Tempo restante: 29:59
                 </div>
                 
-                <div class="plan-card" onclick="selectPlan('anual')">
-                    <h3 class="plan-name">PLANO ANUAL</h3>
-                    <p>Economize 40% - 1 ano completo</p>
-                    <p class="plan-price">R$ 49,90</p>
-                    <ul style="text-align: left; padding-left: 20px;">
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Todos os benefícios anteriores</li>
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Acesso a eventos VIP</li>
-                        <li><i class="fas fa-check" style="color: var(--dourado);"></i> Consultoria exclusiva</li>
-                    </ul>
-                </div>
+                <p><small>Após o pagamento, seu acesso será liberado automaticamente em até 5 minutos</small></p>
             </div>
             
-            <button class="btn-payment" id="paymentBtn" disabled>
-                <i class="fas fa-lock"></i> SELECIONE UM PLANO
+            <button class="btn" style="background: #333;" onclick="backToShareStep()">
+                <i class="fas fa-arrow-left"></i> VOLTAR
             </button>
-            
-            <div id="loading" class="loading hidden">
-                <div class="loading-spinner"></div>
-                <p>Preparando seu link de pagamento seguro...</p>
-            </div>
         </div>
     </div>
 
     <script>
-        // Configuração dos links do PagBank (SUBSTITUA PELOS SEUS LINKS REAIS)
-        const paymentLinks = {
-            mensal: "00020126580014br.gov.bcb.pix0136d147662a-3a05-4d58-8174-ca108dbcca0b27600016BR.COM.PAGSEGURO0136000EA04E-12A8-4BD1-90A8-A8C8EE8FC011520489995303986540515.005802BR5923JAILINE SANTOS DE JESUS6004CATU62290525PAGS0000015002504062101066304B7B3",
-            trimestral: "00020126580014br.gov.bcb.pix0136d147662a-3a05-4d58-8174-ca108dbcca0b27600016BR.COM.PAGSEGURO013674AA16A9-8873-4CF6-B149-5A4917BC24AF520489995303986540539.905802BR5923JAILINE SANTOS DE JESUS6004CATU62290525PAGS00000399025040621545463041761",
-            anual: "00020126580014br.gov.bcb.pix0136d147662a-3a05-4d58-8174-ca108dbcca0b27600016BR.COM.PAGSEGURO0136A1AA9D16-BB95-46E8-9B6B-4ED6E8FACB2D520489995303986540549.905802BR5923JAILINE SANTOS DE JESUS6004CATU62290525PAGS00000499025040621526263049B44"
-        };
-        
-        // Variáveis de controle
-        let sharesCount = 0;
+        // Configurações
         const totalSharesNeeded = 4;
-        let selectedPlan = null;
+        let sharesCount = 0;
+        let paymentTimer;
         
         // Elementos
         const progressBar = document.getElementById('progressBar');
         const progressText = document.getElementById('progressText');
         const lockedContent = document.getElementById('lockedContent');
         const previewContent = document.getElementById('previewContent');
-        const previewImage = document.getElementById('previewImage');
         const shareStep = document.getElementById('shareStep');
         const paymentStep = document.getElementById('paymentStep');
-        const paymentBtn = document.getElementById('paymentBtn');
-        const loadingDiv = document.getElementById('loading');
+        const timerElement = document.getElementById('timer');
+        const pixCodeElement = document.getElementById('pixCode');
         
         // Compartilhamento
         function share(platform) {
-            // Simula delay do compartilhamento
-            setTimeout(() => {
-                sharesCount++;
-                updateProgress();
-                
-                // Efeito sonoro
-                new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3').play();
-                
-                if(sharesCount === totalSharesNeeded) {
-                    // Mostra conteúdo ao completar
-                    lockedContent.classList.add('hidden');
-                    previewContent.classList.remove('hidden');
-                    previewImage.style.filter = 'blur(8px)';
-                    
-                    // Efeito de confetes (simulado)
-                    alert("🎉 Parabéns! Acesso liberado por 24 horas!");
-                }
-            }, 1500);
+            sharesCount++;
+            updateProgress();
             
             // Abre janela de compartilhamento
             const url = "https://clubeproibido.com";
-            const text = "Você precisa ver este conteúdo exclusivo! 🔥";
+            const text = "você precisa ver esse site com vazados de famosos!";
             
             if(platform === 'whatsapp') {
                 window.open(`https://wa.me/?text=${encodeURIComponent(text + " " + url)}`);
             } else {
                 window.open(`https://t.me/share/url?url=${url}&text=${encodeURIComponent(text)}`);
+            }
+            
+            // Mostra prévia quando completar
+            if(sharesCount >= totalSharesNeeded) {
+                lockedContent.classList.add('hidden');
+                previewContent.classList.remove('hidden');
+                
+                // Efeito sonoro
+                new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3').play();
             }
         }
         
@@ -380,7 +281,7 @@
             progressBar.style.width = percentage + '%';
             progressText.textContent = `Compartilhe em 4 grupos para liberar (${sharesCount}/4)`;
             
-            if(sharesCount === totalSharesNeeded) {
+            if(sharesCount >= totalSharesNeeded) {
                 progressText.innerHTML = '<span style="color: #25D366;">✅ Compartilhamento completo!</span>';
             }
         }
@@ -389,46 +290,38 @@
         function showPayment() {
             shareStep.classList.add('hidden');
             paymentStep.classList.remove('hidden');
-            window.scrollTo(0, 0);
+            
+            // Inicia contagem regressiva (30 minutos)
+            let timeLeft = 30 * 60;
+            updateTimer(timeLeft);
+            
+            paymentTimer = setInterval(() => {
+                timeLeft--;
+                updateTimer(timeLeft);
+                
+                if(timeLeft <= 0) {
+                    clearInterval(paymentTimer);
+                    timerElement.innerHTML = '<span style="color: var(--vermelho-sangue);">Tempo esgotado!</span>';
+                }
+            }, 1000);
         }
         
-        function selectPlan(plan) {
-            // Remove seleção anterior
-            document.querySelectorAll('.plan-card').forEach(card => {
-                card.classList.remove('selected');
-            });
-            
-            // Adiciona seleção nova
-            event.currentTarget.classList.add('selected');
-            selectedPlan = plan;
-            
-            // Atualiza botão
-            paymentBtn.disabled = false;
-            paymentBtn.innerHTML = `<i class="fas fa-lock-open"></i> PROSSEGUIR PARA PAGAMENTO (${getPlanName(plan)})`;
+        function updateTimer(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            timerElement.textContent = `Tempo restante: ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         }
         
-        function getPlanName(plan) {
-            const names = {
-                mensal: "Mensal",
-                trimestral: "Trimestral",
-                anual: "Anual"
-            };
-            return names[plan];
+        function copyPixCode() {
+            navigator.clipboard.writeText(pixCodeElement.textContent.trim());
+            alert("Código PIX copiado! Cole no seu aplicativo de banco.");
         }
         
-        paymentBtn.addEventListener('click', () => {
-            if (!selectedPlan) return;
-            
-            // Mostra loading
-            paymentBtn.classList.add('hidden');
-            loadingDiv.classList.remove('hidden');
-            
-            // Simula processamento (2 segundos)
-            setTimeout(() => {
-                // Redireciona para o PagBank
-                window.location.href = paymentLinks[selectedPlan];
-            }, 2000);
-        });
+        function backToShareStep() {
+            clearInterval(paymentTimer);
+            paymentStep.classList.add('hidden');
+            shareStep.classList.remove('hidden');
+        }
         
         // Inicialização
         updateProgress();
