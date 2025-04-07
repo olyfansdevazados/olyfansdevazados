@@ -2,22 +2,22 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <!-- Meta Tags Open Graph -->
-    <meta property="og:title" content="Clube VIP | Conteúdo Exclusivo">
-    <meta property="og:description" content="Desbloqueie seus desejos mais profundos com nosso conteúdo VIP">
-    <meta property="og:image" content="https://imgur.com/a/Cj5faV2">
-    <meta property="og:url" content="https://imgur.com/a/Cj5faV2">
+    <!-- Meta Tags Essenciais para WhatsApp -->
+    <meta property="og:title" content="🔞 Conteúdo VIP Exclusivo - Acesso Imediato">
+    <meta property="og:description" content="Libere agora seu acesso completo ao conteúdo mais procurado!">
+    <meta property="og:image" content="https://ibb.co/sp6cxvhq">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://olyfansdevazados.github.io/olyfansdevazados/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Clube VIP">
+    <meta property="og:site_name" content="Clube VIP 18+">
     
-    <!-- Twitter Card -->
+    <!-- WhatsApp specific -->
+    <meta property="og:image:secure_url" content="https://ibb.co/sp6cxvhq">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Clube VIP | Conteúdo Exclusivo">
-    <meta name="twitter:description" content="Desbloqueie seus desejos mais profundos com nosso conteúdo VIP">
-    <meta name="twitter:image" content="https://olyfansdevazados.github.io/olyfansdevazados/olyfans vazados de famosos.png">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube VIP | Finalização</title>
+    <title>Clube VIP | Acesso Exclusivo</title>
     <style>
         :root {
             --vermelho-sangue: #ff0033;
@@ -75,6 +75,27 @@
             background: var(--degrade-quente);
             width: 0%;
             transition: width 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+            animation: progressShine 2s infinite;
+        }
+        
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
         .share-buttons {
@@ -100,11 +121,6 @@
         
         .whatsapp {
             background: #25D366;
-            color: white;
-        }
-        
-        .telegram {
-            background: #0088cc;
             color: white;
         }
         
@@ -168,13 +184,28 @@
             color: var(--dourado);
             margin: 20px 0;
         }
+        
+        .content-preview {
+            margin: 40px 0;
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .blurred-image {
+            width: 100%;
+            border-radius: 8px;
+            filter: blur(15px);
+            transition: filter 0.5s;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>LIBERE SEU ACESSO VIP</h1>
-        <p>Complete os passos para desbloquear conteúdo exclusivo</p>
+        <h1>🔞 CLUBE VIP EXCLUSIVO</h1>
+        <p>Complete os passos para liberar seu acesso</p>
     </header>
     
     <div class="container">
@@ -195,37 +226,35 @@
                 </button>
             </div>
             
-            <div id="lockedContent" style="text-align: center; margin: 40px 0;">
+            <div id="lockedContent" class="content-preview">
                 <h3>🔒 CONTEÚDO BLOQUEADO</h3>
                 <p>Complete o compartilhamento para visualizar a prévia exclusiva</p>
             </div>
             
-            <div id="previewContent" class="hidden">
-                <h3 style="color: var(--dourado); text-align: center;">PRÉVIA EXCLUSIVA</h3>
-                <div style="background: #111; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                    <img src="clideo_editor_e2586dc9ebbb4a7c857f3f7791065a55.gif" 
-                         style="width: 100%; border-radius: 8px; filter: blur(5px);">
-                    <p style="text-align: center; margin-top: 15px; font-style: italic;">
-                        "Isso é apenas uma amostra do que te espera como membro VIP..."
-                    </p>
-                </div>
+            <div id="previewContent" class="content-preview hidden">
+                <h3 style="color: var(--dourado);">PRÉVIA EXCLUSIVA</h3>
+                <img src="preview-content.jpg" class="blurred-image" id="previewImage">
+                <p style="margin-top: 15px; font-style: italic;">
+                    "Isso é apenas uma amostra do que te espera como membro VIP..."
+                </p>
                 
                 <button class="btn" onclick="showPayment()">
-                    <i class="fas fa-gem"></i> QUERO ACESSO COMPLETO AGORA
+                    <i class="fas fa-gem"></i> QUERO ACESSO COMPLETO POR APENAS R$ 14,99
                 </button>
             </div>
         </div>
         
         <!-- Passo 2: Pagamento PIX -->
         <div id="paymentStep" class="hidden">
-            <h2 style="text-align: center; color: var(--dourado);">PAGUE SOMENTE 14,99</h2>
+            <h2 style="text-align: center; color: var(--dourado);">PAGAMENTO VIA PIX</h2>
             
             <div class="pix-container">
                 <p>Escaneie o QR Code ou copie o código abaixo:</p>
                 
-                <!-- QR Code Placeholder (substitua por um gerador real em produção) -->
-                <div class="pix-qrcode" style="display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-qrcode" style="font-size: 100px; color: #333;"></i>
+                <div class="pix-qrcode">
+                    <!-- QR Code gerado dinamicamente -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126580014br.gov.bcb.pix0136d147662a-3a05-4d58-8174-ca108dbcca0b27600016BR.COM.PAGSEGURO0136000EA04E-12A8-4BD1-90A8-A8C8EE8FC011520489995303986540515.005802BR5923JAILINE SANTOS DE JESUS6004CATU62290525PAGS0000015002504062101066304B7B3" 
+                         alt="QR Code PIX" style="width: 100%;">
                 </div>
                 
                 <p class="pix-code" id="pixCode">
@@ -242,10 +271,6 @@
                 
                 <p><small>Após o pagamento, seu acesso será liberado automaticamente em até 5 minutos</small></p>
             </div>
-            
-            <button class="btn" style="background: #333;" onclick="backToShareStep()">
-                <i class="fas fa-arrow-left"></i> VOLTAR
-            </button>
         </div>
     </div>
 
@@ -260,6 +285,7 @@
         const progressText = document.getElementById('progressText');
         const lockedContent = document.getElementById('lockedContent');
         const previewContent = document.getElementById('previewContent');
+        const previewImage = document.getElementById('previewImage');
         const shareStep = document.getElementById('shareStep');
         const paymentStep = document.getElementById('paymentStep');
         const timerElement = document.getElementById('timer');
@@ -267,26 +293,33 @@
         
         // Compartilhamento
         function share(platform) {
-            sharesCount++;
-            updateProgress();
+            // Simula delay do compartilhamento
+            setTimeout(() => {
+                sharesCount++;
+                updateProgress();
+                
+                // Efeito sonoro
+                new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3').play();
+                
+                if(sharesCount === totalSharesNeeded) {
+                    // Mostra conteúdo ao completar
+                    lockedContent.classList.add('hidden');
+                    previewContent.classList.remove('hidden');
+                    previewImage.style.filter = 'blur(8px)';
+                    
+                    // Efeito de confetes (simulado)
+                    alert("🎉 Parabéns! Acesso liberado por 24 horas!");
+                }
+            }, 500);
             
             // Abre janela de compartilhamento
-            const url = "https://clubeproibido.com";
-            const text = "você precisa ver esse site com vazados de famosos!";
+            const url = window.location.href;
+            const text = "🔞 Você precisa ver este conteúdo exclusivo! Acesse agora:";
             
             if(platform === 'whatsapp') {
                 window.open(`https://wa.me/?text=${encodeURIComponent(text + " " + url)}`);
             } else {
                 window.open(`https://t.me/share/url?url=${url}&text=${encodeURIComponent(text)}`);
-            }
-            
-            // Mostra prévia quando completar
-            if(sharesCount >= totalSharesNeeded) {
-                lockedContent.classList.add('hidden');
-                previewContent.classList.remove('hidden');
-                
-                // Efeito sonoro
-                new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3').play();
             }
         }
         
@@ -295,7 +328,7 @@
             progressBar.style.width = percentage + '%';
             progressText.textContent = `Compartilhe em 4 grupos para liberar (${sharesCount}/4)`;
             
-            if(sharesCount >= totalSharesNeeded) {
+            if(sharesCount === totalSharesNeeded) {
                 progressText.innerHTML = '<span style="color: #25D366;">✅ Compartilhamento completo!</span>';
             }
         }
@@ -329,12 +362,6 @@
         function copyPixCode() {
             navigator.clipboard.writeText(pixCodeElement.textContent.trim());
             alert("Código PIX copiado! Cole no seu aplicativo de banco.");
-        }
-        
-        function backToShareStep() {
-            clearInterval(paymentTimer);
-            paymentStep.classList.add('hidden');
-            shareStep.classList.remove('hidden');
         }
         
         // Inicialização
