@@ -191,6 +191,7 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            position: relative;
         }
         
         .blurred-image {
@@ -198,6 +199,71 @@
             border-radius: 8px;
             filter: blur(15px);
             transition: filter 0.5s;
+        }
+        
+        .teaser-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+        
+        .teaser-text {
+            color: var(--dourado);
+            font-size: 1.5em;
+            text-align: center;
+            padding: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .teaser-icon {
+            font-size: 3em;
+            color: var(--vermelho-sangue);
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .gallery-teaser {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            height: 100px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(8px) brightness(0.7);
+        }
+        
+        .gallery-item .lock-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5em;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -228,12 +294,45 @@
             
             <div id="lockedContent" class="content-preview">
                 <h3>🔒 CONTEÚDO BLOQUEADO</h3>
-                <p>Complete o compartilhamento para visualizar a prévia exclusiva</p>
+                <div class="teaser-overlay">
+                    <div class="teaser-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="teaser-text">
+                        COMPARTILHE PARA DESBLOQUEAR ESTE CONTEÚDO EXCLUSIVO
+                        <p style="font-size: 0.8em; margin-top: 10px;">Você está a apenas 4 compartilhamentos de acessar o conteúdo completo</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="blurred-image">
+                
+                <!-- Mini galeria de prévias -->
+                <div class="gallery-teaser">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                        <div class="lock-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                        <div class="lock-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80">
+                        <div class="lock-icon"><i class="fas fa-lock"></i></div>
+                    </div>
+                </div>
             </div>
             
             <div id="previewContent" class="content-preview hidden">
                 <h3 style="color: var(--dourado);">PRÉVIA EXCLUSIVA</h3>
-                <img src="preview-content.jpg" class="blurred-image" id="previewImage">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="blurred-image" id="previewImage">
+                    <div class="teaser-overlay" style="background: rgba(0,0,0,0.5);">
+                        <div class="teaser-text">
+                            DESBLOQUEIE O ACESSO COMPLETO PARA VER SEM CENSURA
+                            <p style="font-size: 0.8em; margin-top: 10px;">Apenas R$14,99 para acesso vitalício</p>
+                        </div>
+                    </div>
+                </div>
                 <p style="margin-top: 15px; font-style: italic;">
                     "Isso é apenas uma amostra do que te espera como membro VIP..."
                 </p>
@@ -366,6 +465,15 @@
         
         // Inicialização
         updateProgress();
+        
+        // Efeito hover na imagem prévia
+        previewImage.addEventListener('mouseover', function() {
+            this.style.filter = 'blur(4px)';
+        });
+        
+        previewImage.addEventListener('mouseout', function() {
+            this.style.filter = 'blur(8px)';
+        });
     </script>
 </body>
 </html>
